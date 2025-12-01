@@ -1,0 +1,673 @@
+<!DOCTYPE html>  <html lang="en">    <head>    
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>ALI-TECH-XD - BOT DEVELOPER</title>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    
+    <style>    
+        * {    
+            margin: 0;    
+            padding: 0;    
+            box-sizing: border-box;    
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
+        }  :root {    
+        --primary: #25D366;    
+        --secondary: #128C7E;    
+        --dark: #075E54;    
+        --light: #dcf8c6;    
+        --accent: #34B7F1;    
+        --text: #333;    
+        --white: #fff;    
+    }    body {    
+    background: linear-gradient(135deg, var(--dark), var(--secondary));    
+    color: var(--white);    
+    min-height: 100vh;    
+    overflow-x: hidden;    
+}    
+
+.container {    
+    max-width: 1200px;    
+    margin: 0 auto;    
+    padding: 20px;    
+}    
+
+header {    
+    display: flex;    
+    justify-content: space-between;    
+    align-items: center;    
+    padding: 20px 0;    
+    position: relative;    
+    z-index: 10;    
+}    
+
+.logo {    
+    font-size: 28px;    
+    font-weight: 700;    
+    color: var(--white);    
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);    
+}    
+
+.logo span {    
+    color: var(--primary);    
+}    
+
+nav ul {    
+    display: flex;    
+    list-style: none;    
+}    
+
+nav ul li {    
+    margin-left: 30px;    
+}    
+
+nav ul li a {    
+    color: var(--white);    
+    text-decoration: none;    
+    font-weight: 500;    
+    transition: 0.3s;    
+    position: relative;    
+}    
+
+nav ul li a:hover {    
+    color: var(--primary);    
+}    
+
+nav ul li a::after {    
+    content: '';    
+    position: absolute;    
+    bottom: -5px;    
+    left: 0;    
+    width: 0;    
+    height: 2px;    
+    background: var(--primary);    
+    transition: 0.3s;    
+}    
+
+nav ul li a:hover::after {    
+    width: 100%;    
+}    
+
+.hero {    
+    display: flex;    
+    align-items: center;    
+    justify-content: space-between;    
+    min-height: 80vh;    
+    padding: 40px 0;    
+    position: relative;    
+}    
+
+.hero-content {    
+    flex: 1;    
+    max-width: 600px;    
+    z-index: 2;    
+}    
+
+.hero h1 {    
+    font-size: 48px;    
+    margin-bottom: 20px;    
+    line-height: 1.2;    
+}    
+
+.hero h1 span {    
+    color: var(--primary);    
+}    
+
+.hero p {    
+    font-size: 18px;    
+    margin-bottom: 30px;    
+    line-height: 1.6;    
+    opacity: 0.9;    
+}    
+
+.btn {    
+    display: inline-block;    
+    padding: 12px 30px;    
+    background: var(--primary);    
+    color: var(--white);    
+    border-radius: 30px;    
+    text-decoration: none;    
+    font-weight: 600;    
+    transition: 0.3s;    
+    border: none;    
+    cursor: pointer;    
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);    
+}    
+
+.btn:hover {    
+    background: var(--secondary);    
+    transform: translateY(-3px);    
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);    
+}    
+
+.hero-image {    
+    flex: 1;    
+    display: flex;    
+    justify-content: center;    
+    align-items: center;    
+    position: relative;    
+}    
+
+.profile-card {    
+    width: 300px;    
+    height: 400px;    
+    background: rgba(255, 255, 255, 0.1);    
+    backdrop-filter: blur(10px);    
+    border-radius: 20px;    
+    padding: 20px;    
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);    
+    transform-style: preserve-3d;    
+    transition: transform 0.5s;    
+    position: relative;    
+    overflow: hidden;    
+}    
+
+.profile-card:hover {    
+    transform: rotateY(10deg) rotateX(5deg);    
+}    
+
+.profile-img {    
+    width: 150px;    
+    height: 150px;    
+    border-radius: 50%;    
+    margin: 0 auto 20px;    
+    overflow: hidden;    
+    border: 5px solid var(--primary);    
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);    
+}    
+
+.profile-img img {    
+    width: 100%;    
+    height: 100%;    
+    object-fit: cover;    
+}    
+
+.profile-info {    
+    text-align: center;    
+}    
+
+.profile-info h2 {    
+    font-size: 24px;    
+    margin-bottom: 5px;    
+}    
+
+.profile-info p {    
+    font-size: 16px;    
+    opacity: 0.8;    
+    margin-bottom: 20px;    
+}    
+
+.social-links {    
+    display: flex;    
+    justify-content: center;    
+    gap: 15px;    
+    margin-top: 20px;    
+}    
+
+.social-links a {    
+    display: flex;    
+    align-items: center;    
+    justify-content: center;    
+    width: 40px;    
+    height: 40px;    
+    border-radius: 50%;    
+    background: rgba(255, 255, 255, 0.1);    
+    color: var(--white);    
+    text-decoration: none;    
+    transition: 0.3s;    
+}    
+
+.social-links a:hover {    
+    background: var(--primary);    
+    transform: translateY(-5px);    
+}    
+
+.section {    
+    padding: 80px 0;    
+}    
+
+.section-title {    
+    text-align: center;    
+    font-size: 36px;    
+    margin-bottom: 50px;    
+    position: relative;    
+}    
+
+.section-title::after {    
+    content: '';    
+    position: absolute;    
+    bottom: -10px;    
+    left: 50%;    
+    transform: translateX(-50%);    
+    width: 80px;    
+    height: 4px;    
+    background: var(--primary);    
+    border-radius: 2px;    
+}    
+
+.skills-container {    
+    display: grid;    
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));    
+    gap: 30px;    
+}    
+
+.skill-card {    
+    background: rgba(255, 255, 255, 0.1);    
+    backdrop-filter: blur(10px);    
+    border-radius: 15px;    
+    padding: 30px;    
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);    
+    transform-style: preserve-3d;    
+    transition: transform 0.5s;    
+}    
+
+.skill-card:hover {    
+    transform: translateY(-10px) rotateX(5deg);    
+}    
+
+.skill-card i {    
+    font-size: 40px;    
+    color: var(--primary);    
+    margin-bottom: 20px;    
+}    
+
+.skill-card h3 {    
+    font-size: 24px;    
+    margin-bottom: 15px;    
+}    
+
+.skill-card p {    
+    opacity: 0.8;    
+    line-height: 1.6;    
+}    
+
+.projects-container {    
+    display: grid;    
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));    
+    gap: 30px;    
+}    
+
+.project-card {    
+    background: rgba(255, 255, 255, 0.1);    
+    backdrop-filter: blur(10px);    
+    border-radius: 15px;    
+    overflow: hidden;    
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);    
+    transform-style: preserve-3d;    
+    transition: transform 0.5s;    
+}    
+
+.project-card:hover {    
+    transform: translateY(-10px) rotateY(5deg);    
+}    
+
+.project-img {    
+    height: 200px;    
+    background: var(--primary);    
+    position: relative;    
+    overflow: hidden;    
+}    
+
+.project-img::before {    
+    content: '';    
+    position: absolute;    
+    top: 0;    
+    left: 0;    
+    width: 100%;    
+    height: 100%;    
+    background: linear-gradient(45deg, var(--primary), var(--accent));    
+    opacity: 0.7;    
+}    
+
+.project-content {    
+    padding: 20px;    
+}    
+
+.project-content h3 {    
+    font-size: 22px;    
+    margin-bottom: 10px;    
+}    
+
+.project-content p {    
+    opacity: 0.8;    
+    margin-bottom: 15px;    
+    line-height: 1.6;    
+}    
+
+.contact-container {    
+    display: grid;    
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));    
+    gap: 30px;    
+}    
+
+.contact-info {    
+    background: rgba(255, 255, 255, 0.1);    
+    backdrop-filter: blur(10px);    
+    border-radius: 15px;    
+    padding: 30px;    
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);    
+}    
+
+.contact-info h3 {    
+    font-size: 24px;    
+    margin-bottom: 20px;    
+    color: var(--primary);    
+}    
+
+.contact-info p {    
+    margin-bottom: 15px;    
+    display: flex;    
+    align-items: center;    
+}    
+
+.contact-info i {    
+    margin-right: 10px;    
+    color: var(--primary);    
+    width: 20px;    
+}    
+
+.contact-form {    
+    background: rgba(255, 255, 255, 0.1);    
+    backdrop-filter: blur(10px);    
+    border-radius: 15px;    
+    padding: 30px;    
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);    
+}    
+
+.form-group {    
+    margin-bottom: 20px;    
+}    
+
+.form-group label {    
+    display: block;    
+    margin-bottom: 8px;    
+    font-weight: 500;    
+}    
+
+.form-group input,    
+.form-group textarea {    
+    width: 100%;    
+    padding: 12px 15px;    
+    background: rgba(255, 255, 255, 0.1);    
+    border: 1px solid rgba(255, 255, 255, 0.2);    
+    border-radius: 8px;    
+    color: var(--white);    
+    font-size: 16px;    
+    transition: 0.3s;    
+}    
+
+.form-group input:focus,    
+.form-group textarea:focus {    
+    outline: none;    
+    border-color: var(--primary);    
+    background: rgba(255, 255, 255, 0.15);    
+}    
+
+footer {    
+    text-align: center;    
+    padding: 30px 0;    
+    border-top: 1px solid rgba(255, 255, 255, 0.1);    
+    margin-top: 50px;    
+}    
+
+.footer-links {    
+    display: flex;    
+    justify-content: center;    
+    gap: 15px;    
+    margin-bottom: 15px;    
+}    
+
+.footer-links a {    
+    color: var(--white);    
+    text-decoration: none;    
+    transition: 0.3s;    
+}    
+
+.footer-links a:hover {    
+    color: var(--primary);    
+}    
+
+.copyright {    
+    opacity: 0.7;    
+    font-size: 14px;    
+}    
+
+@media (max-width: 768px) {    
+    header {    
+        flex-direction: column;    
+        text-align: center;    
+    }    
+
+    nav ul {    
+        margin-top: 20px;    
+        justify-content: center;    
+    }    
+
+    nav ul li {    
+        margin: 0 10px;    
+    }    
+
+    .hero {    
+        flex-direction: column;    
+        text-align: center;    
+    }    
+
+    .hero-content {    
+        margin-bottom: 50px;    
+    }    
+
+    .hero h1 {    
+        font-size: 36px;    
+    }    
+}    
+
+/* 3D Background Elements */    
+.bg-element {    
+    position: absolute;    
+    border-radius: 50%;    
+    background: rgba(255, 255, 255, 0.05);    
+    animation: float 15s infinite linear;    
+}    
+
+.bg-element:nth-child(1) {    
+    width: 80px;    
+    height: 80px;    
+    top: 10%;    
+    left: 10%;    
+    animation-delay: 0s;    
+}    
+
+.bg-element:nth-child(2) {    
+    width: 120px;    
+    height: 120px;    
+    top: 20%;    
+    right: 10%;    
+    animation-delay: -5s;    
+}    
+
+.bg-element:nth-child(3) {    
+    width: 60px;    
+    height: 60px;    
+    bottom: 20%;    
+    left: 20%;    
+    animation-delay: -10s;    
+}    
+
+.bg-element:nth-child(4) {    
+    width: 100px;    
+    height: 100px;    
+    bottom: 10%;    
+    right: 20%;    
+    animation-delay: -15s;    
+}    
+
+@keyframes float {    
+    0% {    
+        transform: translateY(0) rotate(0deg);    
+    }    
+    50% {    
+        transform: translateY(-20px) rotate(180deg);    
+    }    
+    100% {    
+        transform: translateY(0) rotate(360deg);    
+    }    
+}
+
+</style>  </head>    
+<body>    
+    <!-- Background Elements -->    
+    <div class="bg-element"></div>    
+    <div class="bg-element"></div>    
+    <div class="bg-element"></div>    
+    <div class="bg-element"></div>  <div class="container">    
+    <header>    
+        <div class="logo">ALI <span>TECH XD</span></div>    
+        <nav>    
+            <ul>    
+                <li><a href="#home">Home</a></li>    
+                <li><a href="#skills">Skills</a></li>    
+                <li><a href="#projects">Projects</a></li>    
+                <li><a href="#contact">Contact</a></li>    
+            </ul>    
+        </nav>    
+    </header>    <section class="hero" id="home">    
+    <div class="hero-content">    
+        <h1>Hey Im Ali Bot <span>Developer</span> From Sindh</h1>    
+        <p>I create innovative and efficient WhatsApp bots that automate conversations, enhance customer engagement, and streamline business processes. With expertise in bot development and integration, I deliver solutions that transform how businesses communicate.</p>    
+        <a href="#contact" class="btn">Get In Touch</a>    
+    </div>    
+    <div class="hero-image">    
+        <div class="profile-card">    
+            <div class="profile-img">    
+                <img src="https://github.com/ALI-INXIDE.png" alt="ALI INXIDE">    
+            </div>    
+            <div class="profile-info">    
+                <h2>ALI TECH</h2>    
+                <p>WhatsApp Bot Developer</p>    
+                <p>Sindh, Pakistan</p>    
+                <div class="social-links">    
+                    <a href="https://instagram.com/thw_ali.3x" target="_blank"><i class="fab fa-instagram"></i></a>    
+                    <a href="https://facebook.com/ALI-INXIDE" target="_blank"><i class="fab fa-facebook-f"></i></a>    
+                    <a href="https://t.me/thw_ali" target="_blank"><i class="fab fa-telegram"></i></a>    
+                    <a href="https://github.com/ALI-INXIDE" target="_blank"><i class="fab fa-github"></i></a>    
+                    <a href="https://youtube.com/@ALI-INXIDE" target="_blank"><i class="fab fa-youtube"></i></a>    
+                </div>    
+            </div>    
+        </div>    
+    </div>    
+</section>    
+
+<section class="section" id="skills">    
+    <h2 class="section-title">My Skills</h2>    
+    <div class="skills-container">    
+        <div class="skill-card">    
+            <i class="fab fa-whatsapp"></i>    
+            <h3>WhatsApp API Integration</h3>    
+            <p>Expert in integrating WhatsApp Business API to create powerful and scalable bot solutions for businesses of all sizes.</p>    
+        </div>    
+        <div class="skill-card">    
+            <i class="fas fa-robot"></i>    
+            <h3>Bot Development</h3>    
+            <p>Creating intelligent chatbots that can handle customer queries, automate responses, and provide 24/7 support.</p>    
+        </div>    
+        <div class="skill-card">    
+            <i class="fas fa-code"></i>    
+            <h3>Web Development</h3>    
+            <p>Full-stack development skills to create seamless web interfaces and backend systems for bot management.</p>    
+        </div>    
+        <div class="skill-card">    
+            <i class="fas fa-database"></i>    
+            <h3>Database Management</h3>    
+            <p>Designing and managing databases to store user information, conversation history, and bot analytics.</p>    
+        </div>    
+    </div>    
+</section>    
+
+<section class="section" id="projects">    
+    <h2 class="section-title">My Projects</h2>    
+    <div class="projects-container">    
+        <div class="project-card">    
+            <div class="project-img"></div>    
+            <div class="project-content">    
+                <h3>E-Commerce WhatsApp Bot</h3>    
+                <p>A comprehensive WhatsApp bot for e-commerce businesses that handles product inquiries, order tracking, and customer support.</p>    
+                <a href="#" class="btn">View Details</a>    
+            </div>    
+        </div>    
+        <div class="project-card">    
+            <div class="project-img"></div>    
+            <div class="project-content">    
+                <h3>Customer Support Bot</h3>    
+                <p>An AI-powered customer support bot that answers frequently asked questions and escalates complex issues to human agents.</p>    
+                <a href="#" class="btn">View Details</a>    
+            </div>    
+        </div>    
+        <div class="project-card">    
+            <div class="project-img"></div>    
+            <div class="project-content">    
+                <h3>Appointment Scheduler</h3>    
+                <p>A WhatsApp bot that allows users to book, reschedule, and cancel appointments with businesses seamlessly.</p>    
+                <a href="#" class="btn">View Details</a>    
+            </div>    
+        </div>    
+    </div>    
+</section>    
+
+<section class="section" id="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <div class="contact-container">
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <h3>Get In Touch</h3>
+            <p><i class="fas fa-map-marker-alt"></i>🚩 SINDH, PAKISTAN</p>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:alitechxd@gmail.com">📬 CONTACT MAIL</a></p>
+            <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/92199471258" target="_blank">💬 CONTACT NUMBER</a></p>
+            <p><i class="fas fa-link"></i> <a href="https://chat.whatsapp.com/0029VaoRxGmJpe8lgCqT1T2h" target="_blank">🪀 WHATSAPP CHANNEL</a></p>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <form>
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer>    
+    <div class="footer-links">    
+        <a href="https://instagram.com/thw_ali.3x">Instagram</a>    
+        <a href="https://facebook.com/ALI-INXIDE">Facebook</a>    
+        <a href="https://t.me/thw_ali">Telegram</a>    
+        <a href="https://github.com/ALI-INXIDE">GitHub</a>    
+        <a href="https://youtube.com/@ALI-INXIDE">YouTube</a>    
+    </div>    
+    <p class="copyright">&copy; 2025 ALI-TECH-XD. All Rights Reserved.</p>    
+</footer>
+
+</div>    <script>    
+    // Simple 3D effect for profile card on mouse move    
+    document.addEventListener('mousemove', (e) => {    
+        const card = document.querySelector('.profile-card');    
+        const xAxis = (window.innerWidth / 2 - e.pageX) / 25;    
+        const yAxis = (window.innerHeight / 2 - e.pageY) / 25;    
+        card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;    
+    });    
+  
+    // Reset card when mouse leaves    
+    document.querySelector('.hero-image').addEventListener('mouseleave', () => {    
+        const card = document.querySelector('.profile-card');    
+        card.style.transform = 'rotateY(0) rotateX(0)';    
+    });    
+</script>  </body>    
+</html>  
