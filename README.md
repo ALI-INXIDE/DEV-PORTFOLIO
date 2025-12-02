@@ -1,6 +1,6 @@
 ## 🌐 DEV-PORTFOLIO
 
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfMSwcXISpSqJlesWPK7CEu9iQplhBHTJLEfMiBtNSrsWZmhczr7x-RE8z&s=10" width="80%">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfMSwcXISpSqJlesWPK7CEu9iQplhBHTJLEfMiBtNSrsWZmhczr7x-RE8z&s=17" width="120%">
 Personal portfolio website of Ali — WhatsApp Bot Developer from Sindh.
 A modern, responsive portfolio built with HTML, CSS, and JavaScript, showcasing skills, projects, and contact information.
 
