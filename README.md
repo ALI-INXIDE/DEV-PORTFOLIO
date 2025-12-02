@@ -25,6 +25,12 @@ A modern, responsive portfolio built with HTML, CSS, and JavaScript, showcasing 
 
 🔗 Social media links: Instagram, Facebook, Telegram, GitHub, YouTube
 
+---
+
+## 🌀 LIVE DEMO
+
+🚀 **View Portfolio Online:**  
+👉 https://bot-dev-portfolio.vercel.app
 
 ---
 
